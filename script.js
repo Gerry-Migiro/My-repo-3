@@ -5,7 +5,7 @@ let navbar = document.querySelector('.navbar');
 menuIcon.onclick = () => {
     menuIcon.classList.toggle('bx-x');
     navbar.classList.toggle('active');
-};
+}
 
 // Scroll sections
 let sections = document.querySelectorAll('section');
@@ -33,6 +33,11 @@ window.onscroll = () => {
             sec.classList.remove('show-animate');
         }
     });
+    
+     // remove toggle icon and navbar when click navbar links (scroll)
+    menuIcon.classList.remove('bx-x');
+    navbar.classList.remove('active');
+
 
     // Footer animation
     let footer = document.querySelector('footer');
