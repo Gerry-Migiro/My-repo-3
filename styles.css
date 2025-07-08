@@ -77,6 +77,7 @@ section {
 }
 
 .home-content{
+  margin-top: 8rem;
   max-width: 65rem;
   z-index: 99;
 }
@@ -187,7 +188,8 @@ section {
   width: 100%;
 }
 .home-sci {
-  position: absolute;
+  position: relative;
+  margin-top: 8rem;
   bottom: 4rem;
   width: 170px;
   display: flex;
@@ -711,6 +713,10 @@ background: var(--second-bg-color);
 
     }
     .home-content {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
       z-index: 2;
       position: relative;
       margin-top: 8rem;
@@ -720,12 +726,12 @@ background: var(--second-bg-color);
       flex-direction: column;
       margin-bottom: 1.5rem;
     }
+
     .home-sci {
+      display: inline-flex;
       position: relative;
       margin-top: 12rem;
       width: 160px;
-      
-      
     }
     .home-sci a {
       width: 38px;
