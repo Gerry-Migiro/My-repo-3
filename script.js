@@ -15,6 +15,7 @@ let footer = document.querySelector('footer');
 window.onscroll = () => {
     let top = window.scrollY;
 
+    // Section highlight and animation
     sections.forEach(sec => {
         let offset = sec.offsetTop - 300;
         let height = sec.offsetHeight;
@@ -31,19 +32,18 @@ window.onscroll = () => {
         }
     });
 
-    // sticky header
-    let header = document.querySelector('header');
-    header.classList.toggle('sticky', top > 100);
+    // Sticky header
+    document.querySelector('header').classList.toggle('sticky', top > 100);
 
-    // collapse navbar on scroll
+    // Collapse navbar on scroll
     menuIcon.classList.remove('bx-x');
     navbar.classList.remove('active');
 
-    // show footer animation when it comes into view
-    let footerTop = footer.getBoundingClientRect().top;
+    // Footer animation — improved version
+    let footerRect = footer.getBoundingClientRect();
     let windowHeight = window.innerHeight;
 
-    if (footerTop < windowHeight - 100) {
+    if (footerRect.top <= windowHeight && footerRect.bottom >= 0) {
         footer.classList.add('show-animate');
     } else {
         footer.classList.remove('show-animate');
